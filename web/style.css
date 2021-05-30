@@ -28,3 +28,15 @@ body{
     text-decoration: none;
     color: black;
 }
+.sun_main{
+    position: absolute;
+    width: 75px;
+    margin-top: 10px;
+    margin-left: 365px;
+}
+p{
+    position: absolute;
+    font-size: 9px;
+    margin-top: 250px;
+    margin-left: 380px;
+}
