@@ -8,11 +8,21 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .btns{
+    text-align: center;
     margin-top: 300px;
+    width: 242.5px;
+    margin-left: 100.25px;
 }
 .start{
     background-color: crimson;
-    padding: 30px;
+    padding: 1px;
+    margin-bottom: 10px;
+    border-radius: 15px 0 15px 0;
+}
+.exit{
+    background-color: blueviolet;
+    padding: 1px;
+    border-radius: 15px 0 15px 0;
 }
 .links{
     text-decoration: none;

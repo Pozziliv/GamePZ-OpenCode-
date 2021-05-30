@@ -3,3 +3,9 @@ window.onresize = function (){
         window.resizeTo(485, 765);
     }
 }
+
+const exit = document.querySelector(".exit")
+
+exit.addEventListener("click", function exit() {
+    window.close();
+});
