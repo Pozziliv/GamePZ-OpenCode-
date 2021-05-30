@@ -1,0 +1,21 @@
+body{
+    height: 765px;
+    width: 485px;
+    background: no-repeat;
+    background-image: url(../img/menu.png);
+    background-size:  100%;
+    position: fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sunormoon{
+    position: absolute;
+    width: 75px;
+    margin-top: 10px;
+    margin-left: 365px;
+}
+p{
+    position: absolute;
+    font-size: 9px;
+    margin-top: 250px;
+    margin-left: 380px;
+}
