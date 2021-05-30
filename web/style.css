@@ -5,8 +5,16 @@ body{
     background-image: url(img/menu.png);
     background-size:  100%;
     position: fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .btns{
-    display: block;
-    margin: 0 auto;
+    margin-top: 300px;
+}
+.start{
+    background-color: crimson;
+    padding: 30px;
+}
+.links{
+    text-decoration: none;
+    color: black;
 }
