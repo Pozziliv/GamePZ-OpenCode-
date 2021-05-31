@@ -13,15 +13,21 @@ body{
     margin-top: 10px;
     margin-left: 365px;
 }
+.airdrop{
+    display: none;
+}
 p{
     position: absolute;
     font-size: 9px;
     margin-top: 250px;
     margin-left: 380px;
 }
-.moon{
-    width: 75px;
+.moon_main{
+    width: 46px;
+    margin-left: 395px;
 }
 .value{
-
+    position: absolute;
+    width: 385px;
+    margin-left: 0;
 }
