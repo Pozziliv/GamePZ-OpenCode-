@@ -71,6 +71,60 @@ h3{
     margin-bottom: 0;
 }
 h2{
+    display: inline;
     color: black;
     margin-top: 0;
+}
+.add_img{
+    width: 50px;
+}
+.img_poins{
+    height: 50px;
+}
+.add_life{
+    width: 400px;
+    background-color: aqua;
+    margin-top: 15px;
+    margin-bottom: 0;
+    margin-left: 25px;
+}
+.add_eat{
+    width: 400px;
+    background-color: brown;
+    margin-top: 15px;
+    margin-bottom: 0;
+    margin-left: 25px;
+}
+.add_points{
+    width: 400px;
+    background-color: blue;
+    margin-top: 15px;
+    margin-bottom: 0;
+    margin-left: 25px;
+}
+.img_poins .points_recue{
+    display: inline;
+}
+.add_img{
+    position: absolute;
+    margin: 7.5px 10px;
+}
+.add{
+    text-align: end;
+    border-radius: 5px;
+    height: 65px;
+    position: relative;
+}
+.img_heal{
+    margin: 7.5px -65px;
+}
+.img_eat{
+    margin: 17.5px -195px;
+}
+.img_poins{
+    margin: 7.5px -130px;
+}
+.recue{
+    margin-right: 20px;
+    vertical-align: -15px;
 }
