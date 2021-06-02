@@ -1,4 +1,14 @@
-body{
+.dayBody{
+    height: 765px;
+    width: 485px;
+    background: no-repeat;
+    background-image: url(../img/menu.png);
+    background-size:  100%;
+    position: fixed;
+    z-index: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nightBody{
     height: 765px;
     width: 485px;
     background: no-repeat;
@@ -50,7 +60,7 @@ p{
     display: inline-block;
     height: 80px;
     width: 148px;
-    background-color: brown;
+    background-color: rgb(255, 66, 66);
 }
 a{
     text-decoration: none;
@@ -90,7 +100,7 @@ h2{
 }
 .add_eat{
     width: 400px;
-    background-color: brown;
+    background-color: rgb(255, 66, 66);
     margin-top: 15px;
     margin-bottom: 0;
     margin-left: 25px;
@@ -127,4 +137,16 @@ h2{
 .recue{
     margin-right: 20px;
     vertical-align: -15px;
+}
+.sun_main{
+    display: none;
+}
+.moon_main{
+    display: none;
+}
+.day{
+    display: block;
+}
+.night{
+    display: block;
 }
