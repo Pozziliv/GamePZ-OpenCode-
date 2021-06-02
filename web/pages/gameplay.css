@@ -29,20 +29,36 @@ p{
 }
 
 .life{
-    display: inline;
+    border-radius: 25px;
+    text-align: center;
+    display: inline-block;
+    width: 148px;
+    height: 80px;
     background-color: aqua;
 }
 .points{
-    display: inline;
+    border-radius: 25px;
+    text-align: center;
+    display: inline-block;
+    width: 148px;
+    height: 80px;
     background-color: blue;
 }
 .meal{
-    display: inline;
+    border-radius: 25px;
+    text-align: center;
+    display: inline-block;
+    height: 80px;
+    width: 148px;
     background-color: brown;
 }
+a{
+    text-decoration: none;
+}
 .value{
-    margin-top: 100px;
-    display: inline;
+    width: 1000px;
+    height: 200px;
+    margin-top: 150px;
     z-index: 2;
     margin-left: 0;
 }
@@ -50,5 +66,11 @@ p{
     display: none;
 }
 h3{
-    display: inline;
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+h2{
+    color: black;
+    margin-top: 0;
 }
