@@ -14,6 +14,7 @@ const meal = document.querySelector(".mealK");
 const points = document.querySelector(".pointsK")
 
 let cycles = 0;
+let level = 1;
 let lifePoints = 10;
 let mealPoints = 10;
 let pointsPoints = 10;
@@ -43,4 +44,24 @@ if (cycles % 12 == 0){
     lifePoints += 3;
     mealRemove += 3;
     pointsPoints += 3;
+}
+
+if (cycles % 15 == 0){
+    if (body.classList.contains("dayBody")){
+        body.classList.remove("dayBody")
+        body.classList.add("nightBody")
+    } else {
+        body.classList.remove("nightBody")
+        body.classList.add("dayBody")
+    }
+}
+
+if (cycles % 17 == 0 && level < 3) {
+    level += 1;
+    lifeAdd += 2;
+    lifeRemove += 1;
+    mealAdd += 1;
+    mealRemove += 1;
+    pointsAdd += 1.5;
+    pointsRemove += 1;
 }
