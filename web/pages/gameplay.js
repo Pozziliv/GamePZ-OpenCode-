@@ -14,9 +14,9 @@ const meal = document.querySelector(".mealK");
 const points = document.querySelector(".pointsK")
 
 let cycles = 0;
-let lifePoints = 7;
-let mealPoints = 7;
-let pointsPoints = 7;
+let lifePoints = 10;
+let mealPoints = 10;
+let pointsPoints = 10;
 
 let lifeAdd = 1;
 let lifeRemove = 1;
@@ -25,3 +25,22 @@ let mealRemove = 1;
 let pointsAdd = 1;
 let pointsRemove = 1;
 
+if (lifePoints <= 0 || mealPoints <= 0 || pointsPoints <= 0){
+    
+} else if (lifePoints >= 15){
+
+} else if (mealPoints >= 15){
+
+} else if (pointsPoints >= 15){
+
+}
+
+if (cycles % 12 == 0){
+    lifePoints += 5;
+    mealRemove += 5;
+    pointsPoints += 5;
+} else if (cycles % 7 == 0) {
+    lifePoints += 3;
+    mealRemove += 3;
+    pointsPoints += 3;
+}
