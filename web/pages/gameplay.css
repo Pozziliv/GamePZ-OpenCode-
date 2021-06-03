@@ -25,7 +25,18 @@
     margin-left: 365px;
 }
 .airdrop{
+    position: absolute;
     display: none;
+    width: 50px;
+    transition-property: width, margin-left, margin-top;
+    transition-duration: 5s;
+    margin-left: 100px;
+}
+.falldrop{
+    display: block;
+    width: 59px;
+    margin-left: 125px;
+    margin-top: 40px;
 }
 p{
     position: absolute;
@@ -73,7 +84,14 @@ a{
     margin-left: 0;
 }
 .bonus{
+    position: absolute;
     display: none;
+}
+.B_present{
+    font-size: 20px;
+    position: absolute;
+    display: block;
+    left: 100px;
 }
 h3{
     color: black;
