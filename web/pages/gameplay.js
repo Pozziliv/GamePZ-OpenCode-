@@ -23,29 +23,30 @@ let mealRemove = 1;
 let pointsAdd = 1;
 let pointsRemove = 1;
 
-if (lifePoints <= 0 || mealPoints <= 0 || pointsPoints <= 0){
+if (lifePoints <= 0 || mealPoints <= 0 || pointsPoints <= 0) {
     
-} else if (lifePoints >= 15){
+} else if (lifePoints >= 15) {
 
-} else if (mealPoints >= 15){
+} else if (mealPoints >= 15) {
 
-} else if (pointsPoints >= 15){
+} else if (pointsPoints >= 15) {
 
 }
 
-if (cycles % 12 == 0){
+if (cycles % 12 == 0) {
     airdrop.classList.add("falldrop")
     lifePoints += 5;
-    mealRemove += 5;
+    mealPoints += 5;
     pointsPoints += 5;
 } else if (cycles % 7 == 0) {
     bonus.classList.add("B_present")
     lifePoints += 3;
-    mealRemove += 3;
+    mealPoints += 3;
     pointsPoints += 3;
 }
 
-if (cycles % 15 == 0){
+if (cycles % 15 == 0) {
+    console.log("check")
     if (body.classList.contains("dayBody")){
         body.classList.remove("dayBody");
         body.classList.add("nightBody");
