@@ -1,0 +1,16 @@
+body{
+    height: 765px;
+    width: 485px;
+    background: no-repeat;
+    background-image: url(../img/menu.png);
+    background-size:  100%;
+    position: fixed;
+    z-index: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sun_main{
+    position: absolute;
+    width: 75px;
+    margin-top: 10px;
+    margin-left: 365px;
+}
