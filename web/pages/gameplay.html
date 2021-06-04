@@ -14,40 +14,34 @@
     <div class="value">
         <div class="life">
             <h3>ЖИЗНЬ</h3>
-            <h2 class="lifeh"><span class="lifeK">10</span>/15</h2>
+            <h2 class="lifeh"><span id="lifeK">10</span>/15</h2>
         </div>
         <div class="meal">
             <h3>ЕДА</h3>
-            <h2 class="mealh"><span class="mealK">10</span>/15</h2>
+            <h2 class="mealh"><span id="mealK">10</span>/15</h2>
         </div>
         <div class="points">
             <h3>ОЧКИ</h3>
-            <h2 class="pointsh"><span class="pointsK">10</span>/15</h2>
+            <h2 class="pointsh"><span id="pointsK">10</span>/15</h2>
         </div>
     </div>
 
     <div>
-        <a href="" onclick="return false;">
-            <div class="add_life add">
-                <img class="add_img img_heal" src="../img/heal.png">
-                <h2 class="heal_recue recue">ВОСПОЛНИТЬ ЖИЗНЬ</h2>
-            </div>
-        </a>
-        <a href="" onclick="return false;">
-            <div class="add_eat add">
-                <img class="add_img img_eat" src="../img/meal.png">
-                <h2 class="eat_recue recue">ПОЕСТЬ ЕДУ</h2>
-            </div>
-        </a>
-        <a href="" onclick="return false;">
-            <div class="add_points add">
-                <img class="add_img img_poins" src="../img/coin.png">
-                <h2 class="points_recue recue">ДОБАВИТЬ ОЧКИ</h2>
-            </div>
-        </a>
+        <div class="add_life add" onclick="lifeAddFunction()">
+            <img class="add_img img_heal" src="../img/heal.png">
+            <h2 class="heal_recue recue">ВОСПОЛНИТЬ ЖИЗНЬ</h2>
+        </div>
+        <div class="add_eat add" onclick="mealAddFunction()">
+            <img class="add_img img_eat" src="../img/meal.png">
+            <h2 class="eat_recue recue">ПОЕСТЬ ЕДУ</h2>
+        </div>
+        <div class="add_points add" onclick="pointsAddFunction()">
+            <img class="add_img img_poins" src="../img/coin.png">
+            <h2 class="points_recue recue">ДОБАВИТЬ ОЧКИ</h2>
+        </div>
     </div>
 
-    <p>Version 0.01 Alfa</p>
+    <p class="Ver">Version 0.01 Alfa</p>
     <script src="gameplay.js"></script>
 </body>
 </html>
