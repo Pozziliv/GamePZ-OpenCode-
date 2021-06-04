@@ -29,18 +29,6 @@ let LifeInf = 0;
 function checkPoints(){
     if (lifePoints <= 0 || mealPoints <= 0 || pointsPoints <= 0) {
         document.location.href = "finish.html";
-    } else if (lifePoints >= 15) {
-        lifePoints = 15;
-        document.getElementById("pointsK").textContent = pointsPoints;
-        LifeInf = 2;
-    } else if (mealPoints >= 15) {
-        mealPoints = 15;
-        document.getElementById("pointsK").textContent = mealPoints;
-        MealInf = 2;
-    } else if (pointsPoints >= 15) {
-        pointsPoints = 15;
-        document.getElementById("pointsK").textContent = pointsPoints;
-        PointsInf = 2;
     }
     dayOrNight();
 }
@@ -101,13 +89,21 @@ function levelUp(){
 function lifeAddFunction() {
     cycles += 1;
     lifePoints += lifeAdd;
-    if (PointsInf > 0) {
+    if (PointsInf == 0 && pointsPoints >= 15){
+        pointsPoints = 15;
+        PointsInf = 1;
+    }else if (PointsInf > 0) {
         PointsInf -= 1;
+        pointsPoints -= 1;
     } else {
         pointsPoints -= pointsRemove;
     };
-    if (MealInf > 0) {
+    if (MealInf == 0 && mealPoints >= 15){
+        mealPoints = 15;
+        MealInf = 1;
+    }else if (MealInf > 0) {
         MealInf -= 1;
+        mealPoints -= 1;
     } else {
         mealPoints -= mealRemove;
     };
@@ -119,13 +115,21 @@ function lifeAddFunction() {
 
 function mealAddFunction() {
     cycles += 1;
-    if (LifeInf > 0) {
+    if (LifeInf == 0 && lifePoints >= 15){
+        lifePoints = 15;
+        LifeInf = 1;
+    }else if (LifeInf > 0) {
         LifeInf -= 1;
+        lifePoints -= 1;
     } else {
         lifePoints -= lifeRemove;
     };
-    if (PointsInf > 0) {
+    if (PointsInf == 0 && pointsPoints >= 15){
+        pointsPoints = 15;
+        PointsInf = 1;
+    }else if (PointsInf > 0) {
         PointsInf -= 1;
+        pointsPoints -= 1;
     } else {
         pointsPoints -= pointsRemove;
     };
@@ -138,14 +142,22 @@ function mealAddFunction() {
 
 function pointsAddFunction() {
     cycles += 1;
-    if (LifeInf > 0) {
+    if (LifeInf == 0 && lifePoints >= 15){
+        lifePoints = 15;
+        LifeInf = 1;
+    }else if (LifeInf > 0) {
         LifeInf -= 1;
+        lifePoints -= 1;
     } else {
         lifePoints -= lifeRemove;
     };
     pointsPoints += pointsAdd;
-    if (MealInf > 0) {
+    if (MealInf == 0 && mealPoints >= 15){
+        mealPoints = 15;
+        MealInf = 1;
+    }else if (MealInf > 0) {
         MealInf -= 1;
+        mealPoints -= 1;
     } else {
         mealPoints -= mealRemove;
     };
