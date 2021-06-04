@@ -23,51 +23,76 @@ let mealRemove = 1;
 let pointsAdd = 1;
 let pointsRemove = 1;
 
-if (lifePoints <= 0 || mealPoints <= 0 || pointsPoints <= 0) {
-    
-} else if (lifePoints >= 15) {
+function checkPoints(){
+    if (lifePoints <= 0 || mealPoints <= 0 || pointsPoints <= 0) {
+        
+    } else if (lifePoints >= 15) {
+        
+        levelUp();
+    } else if (mealPoints >= 15) {
 
-} else if (mealPoints >= 15) {
+        levelUp();
+    } else if (pointsPoints >= 15) {
 
-} else if (pointsPoints >= 15) {
-
-}
-
-if (cycles % 12 == 0) {
-    airdrop.classList.add("falldrop")
-    lifePoints += 5;
-    mealPoints += 5;
-    pointsPoints += 5;
-} else if (cycles % 7 == 0) {
-    bonus.classList.add("B_present")
-    lifePoints += 3;
-    mealPoints += 3;
-    pointsPoints += 3;
-}
-
-if (cycles % 15 == 0) {
-    console.log("check")
-    if (body.classList.contains("dayBody")){
-        body.classList.remove("dayBody");
-        body.classList.add("nightBody");
-        sun.classList.remove("day");
-        moon.classList.add("night");
-    } else {
-        body.classList.remove("nightBody")
-        body.classList.add("dayBody")
-        sun.classList.add("day");
-        moon.classList.remove("night");
+        levelUp();
     }
+    levelUp();
 }
 
-if (cycles % 17 == 0 && level < 3) {
-    level += 1;
-    lifeAdd += 2;
-    lifeRemove += 1;
-    mealAdd += 1;
-    mealRemove += 1;
-    pointsAdd += 1.5;
-    pointsRemove += 1;
+function airdropOrBonus(){
+    if ((cycles % 12) == 0) {
+        airdrop.classList.add("falldrop")
+        lifePoints += 5;
+        mealPoints += 5;
+        pointsPoints += 5;
+        document.getElementById("lifeK").textContent = lifePoints;
+        document.getElementById("mealK").textContent = mealPoints;
+        document.getElementById("pointsK").textContent = pointsPoints;
+        dayOrNight();
+    } else if ((cycles % 7) == 0) {
+        bonus.classList.add("B_present")
+        lifePoints += 3;
+        mealPoints += 3;
+        pointsPoints += 3;
+        document.getElementById("lifeK").textContent = lifePoints;
+        document.getElementById("mealK").textContent = mealPoints;
+        document.getElementById("pointsK").textContent = pointsPoints;
+        dayOrNight();
+    }
+    dayOrNight();
+}
+
+function dayOrNight(){
+    if ((cycles % 15) == 0) {
+        if (body.classList.contains("dayBody")){
+            body.classList.remove("dayBody");
+            body.classList.add("nightBody");
+            sun.classList.remove("day");
+            moon.classList.add("night");
+            dayOrNight();
+        } else {
+            body.classList.remove("nightBody")
+            body.classList.add("dayBody")
+            sun.classList.add("day");
+            moon.classList.remove("night");
+            dayOrNight();
+        }
+    }
+    dayOrNight();
+}
+
+function levelUp(){
+    if ((cycles % 17) == 0 && level < 3) {
+        level += 1;
+        lifeAdd += 2;
+        lifeRemove += 1;
+        mealAdd += 1;
+        mealRemove += 1;
+        pointsAdd += 1.5;
+        pointsRemove += 1;
+        airdropOrBonus();
+    }
+    airdropOrBonus();
 }
 
 function lifeAddFunction() {
@@ -78,6 +103,7 @@ function lifeAddFunction() {
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;
+    checkPoints();
 }
 
 function mealAddFunction() {
@@ -88,6 +114,7 @@ function mealAddFunction() {
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;
+    checkPoints();
 }
 
 function pointsAddFunction() {
@@ -98,4 +125,5 @@ function pointsAddFunction() {
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;
+    checkPoints();
 }
