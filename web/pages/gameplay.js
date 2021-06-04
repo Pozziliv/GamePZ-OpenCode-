@@ -10,7 +10,7 @@ const moon = document.querySelector(".moon_main");
 const airdrop = document.querySelector(".airdrop");
 const bonus = document.querySelector(".bonus");
 
-let cycles = 1;
+let cycles = 0;
 let level = 1;
 let lifePoints = 10;
 let mealPoints = 10;
@@ -36,30 +36,31 @@ function checkPoints(){
 
         levelUp();
     }
-    levelUp();
+    dayOrNight();
 }
 
 function airdropOrBonus(){
     if ((cycles % 12) == 0) {
-        airdrop.classList.add("falldrop")
-        lifePoints += 5;
-        mealPoints += 5;
-        pointsPoints += 5;
+        airdrop.classList.add("falldrop");
+        lifePoints += 3.5;
+        mealPoints += 3.5;
+        pointsPoints += 3.5;
         document.getElementById("lifeK").textContent = lifePoints;
         document.getElementById("mealK").textContent = mealPoints;
         document.getElementById("pointsK").textContent = pointsPoints;
-        dayOrNight();
     } else if ((cycles % 7) == 0) {
-        bonus.classList.add("B_present")
-        lifePoints += 3;
-        mealPoints += 3;
-        pointsPoints += 3;
+        bonus.classList.add("B_present");
+        lifePoints += 2;
+        mealPoints += 2;
+        pointsPoints += 2;
         document.getElementById("lifeK").textContent = lifePoints;
         document.getElementById("mealK").textContent = mealPoints;
         document.getElementById("pointsK").textContent = pointsPoints;
-        dayOrNight();
+    } else {
+        bonus.classList.remove("B_present");
+        airdrop.classList.remove("falldrop");
     }
-    dayOrNight();
+    levelUp();
 }
 
 function dayOrNight(){
@@ -78,21 +79,20 @@ function dayOrNight(){
             dayOrNight();
         }
     }
-    dayOrNight();
 }
 
 function levelUp(){
     if ((cycles % 17) == 0 && level < 3) {
         level += 1;
         lifeAdd += 2;
-        lifeRemove += 1;
+        lifeRemove += 2.5;
         mealAdd += 1;
-        mealRemove += 1;
+        mealRemove += 2;
         pointsAdd += 1.5;
-        pointsRemove += 1;
+        pointsRemove += 2;
         airdropOrBonus();
     }
-    airdropOrBonus();
+    checkPoints();
 }
 
 function lifeAddFunction() {
@@ -103,7 +103,7 @@ function lifeAddFunction() {
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;
-    checkPoints();
+    airdropOrBonus();
 }
 
 function mealAddFunction() {
@@ -114,7 +114,7 @@ function mealAddFunction() {
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;
-    checkPoints();
+    airdropOrBonus();
 }
 
 function pointsAddFunction() {
@@ -125,5 +125,5 @@ function pointsAddFunction() {
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;
-    checkPoints();
+    airdropOrBonus();
 }
