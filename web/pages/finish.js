@@ -4,3 +4,6 @@ window.onresize = function (){
     }
 }
 
+function href() {
+    document.location.href = "../index.html"
+}

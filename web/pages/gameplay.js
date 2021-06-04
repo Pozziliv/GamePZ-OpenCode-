@@ -22,19 +22,25 @@ let mealAdd = 1;
 let mealRemove = 1;
 let pointsAdd = 1;
 let pointsRemove = 1;
+let PointsInf = 0;
+let MealInf = 0;
+let LifeInf = 0;
 
 function checkPoints(){
     if (lifePoints <= 0 || mealPoints <= 0 || pointsPoints <= 0) {
-        
+        document.location.href = "finish.html";
     } else if (lifePoints >= 15) {
-        
-        levelUp();
+        lifePoints = 15;
+        document.getElementById("pointsK").textContent = pointsPoints;
+        LifeInf = 2;
     } else if (mealPoints >= 15) {
-
-        levelUp();
+        mealPoints = 15;
+        document.getElementById("pointsK").textContent = mealPoints;
+        MealInf = 2;
     } else if (pointsPoints >= 15) {
-
-        levelUp();
+        pointsPoints = 15;
+        document.getElementById("pointsK").textContent = pointsPoints;
+        PointsInf = 2;
     }
     dayOrNight();
 }
@@ -70,13 +76,11 @@ function dayOrNight(){
             body.classList.add("nightBody");
             sun.classList.remove("day");
             moon.classList.add("night");
-            dayOrNight();
         } else {
             body.classList.remove("nightBody")
             body.classList.add("dayBody")
             sun.classList.add("day");
             moon.classList.remove("night");
-            dayOrNight();
         }
     }
 }
@@ -90,7 +94,6 @@ function levelUp(){
         mealRemove += 2;
         pointsAdd += 1.5;
         pointsRemove += 2;
-        airdropOrBonus();
     }
     checkPoints();
 }
@@ -98,8 +101,16 @@ function levelUp(){
 function lifeAddFunction() {
     cycles += 1;
     lifePoints += lifeAdd;
-    pointsPoints -= pointsRemove;
-    mealPoints -= mealRemove;
+    if (PointsInf > 0) {
+        PointsInf -= 1;
+    } else {
+        pointsPoints -= pointsRemove;
+    };
+    if (MealInf > 0) {
+        MealInf -= 1;
+    } else {
+        mealPoints -= mealRemove;
+    };
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;
@@ -108,8 +119,16 @@ function lifeAddFunction() {
 
 function mealAddFunction() {
     cycles += 1;
-    lifePoints -= lifeRemove;
-    pointsPoints -= pointsRemove;
+    if (LifeInf > 0) {
+        LifeInf -= 1;
+    } else {
+        lifePoints -= lifeRemove;
+    };
+    if (PointsInf > 0) {
+        PointsInf -= 1;
+    } else {
+        pointsPoints -= pointsRemove;
+    };
     mealPoints += mealAdd;
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
@@ -119,9 +138,17 @@ function mealAddFunction() {
 
 function pointsAddFunction() {
     cycles += 1;
-    lifePoints -= lifeRemove;
+    if (LifeInf > 0) {
+        LifeInf -= 1;
+    } else {
+        lifePoints -= lifeRemove;
+    };
     pointsPoints += pointsAdd;
-    mealPoints -= mealRemove;
+    if (MealInf > 0) {
+        MealInf -= 1;
+    } else {
+        mealPoints -= mealRemove;
+    };
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;

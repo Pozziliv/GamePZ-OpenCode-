@@ -1,3 +1,7 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 body{
     height: 765px;
     width: 485px;
@@ -13,4 +17,25 @@ body{
     width: 75px;
     margin-top: 10px;
     margin-left: 365px;
+}
+.divRec{
+    text-align: center;
+    position: relative;
+    background-color: rgb(231, 103, 248);
+    border-radius: 25px;
+    width: 350px;
+    height: 100px;
+    margin: 250px 62px 0 55px;
+    padding: 35px 0 0 0;
+}
+.MainMenu{
+    text-align: center;
+    position: relative;
+    background-color: crimson;
+    border-radius: 10px 0 10px 0;
+    width: 200px;
+    height: 40px;
+    margin: 45px 130px;
+    padding: 5px 0 0 0;
+    cursor: pointer;
 }
