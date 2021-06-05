@@ -3,7 +3,3 @@ window.onresize = function (){
         window.resizeTo(485, 765);
     }
 }
-
-function href() {
-    document.location.href = "../index.html"
-}

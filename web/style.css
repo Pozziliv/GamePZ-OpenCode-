@@ -23,6 +23,7 @@ body{
     background-color: blueviolet;
     padding: 1px;
     border-radius: 15px 0 15px 0;
+    cursor: pointer;
 }
 .links{
     text-decoration: none;
