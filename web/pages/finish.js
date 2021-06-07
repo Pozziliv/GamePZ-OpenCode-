@@ -3,3 +3,7 @@ window.onresize = function (){
         window.resizeTo(485, 765);
     }
 }
+
+function mainMenu(){
+    window.location.replace("../Index.html")
+}

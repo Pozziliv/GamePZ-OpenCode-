@@ -117,6 +117,7 @@ function lifeAddFunction() {
     } else {
         mealPoints -= mealRemove;
     };
+    document.getElementById("cycle").textContent = cycles;
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;
@@ -154,6 +155,7 @@ function mealAddFunction() {
     } else {
         pointsPoints -= pointsRemove;
     };
+    document.getElementById("cycle").textContent = cycles;
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;
@@ -193,6 +195,7 @@ function pointsAddFunction() {
     } else {
         mealPoints -= mealRemove;
     };
+    document.getElementById("cycle").textContent = cycles;
     document.getElementById("lifeK").textContent = lifePoints;
     document.getElementById("mealK").textContent = mealPoints;
     document.getElementById("pointsK").textContent = pointsPoints;

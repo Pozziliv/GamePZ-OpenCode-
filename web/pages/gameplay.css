@@ -77,11 +77,18 @@ a{
     text-decoration: none;
 }
 .value{
-    width: 1000px;
-    height: 200px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 10px;
+    background-color: blueviolet;
+    width: 456px;
+    height: 170px;
     margin-top: 150px;
     z-index: 2;
-    margin-left: 0;
+    margin-left: -1px;
+}
+.cyclesh{
+    display: block;
 }
 .bonus{
     position: absolute;
@@ -138,6 +145,7 @@ h2{
     margin: 7.5px 10px;
 }
 .add{
+    top: 50px;
     cursor: pointer;
     text-align: end;
     border-radius: 5px;
