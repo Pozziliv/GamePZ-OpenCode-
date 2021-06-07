@@ -28,6 +28,7 @@ let LifeInf = 0;
 
 function checkPoints(){
     if (lifePoints <= 0 || mealPoints <= 0 || pointsPoints <= 0) {
+        localStorage.setItem("cycles", cycles);
         document.location.href = "finish.html";
     }
     dayOrNight();
