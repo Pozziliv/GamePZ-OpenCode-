@@ -1,5 +1,4 @@
 import eel
 eel.init("web")
 
-
-eel.start("index.html", size=(765, 485))
+eel.start("index.html", size=(500, 485))
