@@ -177,3 +177,11 @@ h2{
 .night{
     display: block;
 }
+
+.gameplayChanceToRevive{
+    display: none;
+}
+
+.gameplay{
+    display: none;
+}

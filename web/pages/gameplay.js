@@ -17,9 +17,9 @@ let mealPoints = 10;
 let pointsPoints = 10;
 
 let lifeAdd = 1;
-let lifeRemove = 1;
+let lifeRemove = 0.75;
 let mealAdd = 1;
-let mealRemove = 1;
+let mealRemove = 0.75;
 let pointsAdd = 1;
 let pointsRemove = 1;
 let PointsInf = 0;
@@ -37,24 +37,57 @@ function checkPoints(){
 function airdropOrBonus(){
     if ((cycles % 12) == 0) {
         airdrop.classList.add("falldrop");
-        lifePoints += 3.5;
-        mealPoints += 3.5;
-        pointsPoints += 3.5;
-        document.getElementById("lifeK").textContent = lifePoints;
-        document.getElementById("mealK").textContent = mealPoints;
-        document.getElementById("pointsK").textContent = pointsPoints;
+        lifePoints += 3;
+        mealPoints += 3;
+        pointsPoints += 3;
+        if (mealPoints > 15) {
+            mealPoints = 15;
+            if (MealInf == 0){
+                MealInf = 1;
+            }
+        }
+        if (lifePoints > 15) {
+            lifePoints = 15;
+            if (LifeInf == 0){
+                LifeInf = 1;
+            }
+        }
+        if (pointsPoints > 15) {
+            pointsPoints = 15;
+            if (PointsInf == 0){
+                PointsInf = 1;
+            }
+        }
     } else if ((cycles % 7) == 0) {
         bonus.classList.add("B_present");
         lifePoints += 2;
         mealPoints += 2;
         pointsPoints += 2;
-        document.getElementById("lifeK").textContent = lifePoints;
-        document.getElementById("mealK").textContent = mealPoints;
-        document.getElementById("pointsK").textContent = pointsPoints;
+        if (mealPoints > 15) {
+            mealPoints = 15;
+            if (MealInf == 0){
+                MealInf = 1;
+            }
+        }
+        if (lifePoints > 15) {
+            lifePoints = 15;
+            if (LifeInf == 0){
+                LifeInf = 1;
+            }
+        }
+        if (pointsPoints > 15) {
+            pointsPoints = 15;
+            if (PointsInf == 0){
+                PointsInf = 1;
+            }
+        }
     } else {
         bonus.classList.remove("B_present");
         airdrop.classList.remove("falldrop");
     }
+    document.getElementById("lifeK").textContent = lifePoints;
+    document.getElementById("mealK").textContent = mealPoints;
+    document.getElementById("pointsK").textContent = pointsPoints;
     levelUp();
 }
 
@@ -72,16 +105,27 @@ function dayOrNight(){
             moon.classList.remove("night");
         }
     }
+    if (lifePoints == 15 && mealPoints == 15 && pointsPoints == 15) {
+        lifePoints = 14;
+        mealPoints = 14;
+        pointsPoints = 14;
+        LifeInf = 0;
+        MealInf = 0;
+        PointsInf = 0;
+        document.getElementById("lifeK").textContent = lifePoints;
+        document.getElementById("mealK").textContent = mealPoints;
+        document.getElementById("pointsK").textContent = pointsPoints;
+    }
 }
 
 function levelUp(){
-    if ((cycles % 17) == 0 && level < 3) {
+    if ((cycles % 17) == 0 && level < 5) {
         level += 1;
-        lifeAdd += 2;
+        lifeAdd += 2.5;
         lifeRemove += 2.5;
-        mealAdd += 1;
-        mealRemove += 2;
-        pointsAdd += 1.5;
+        mealAdd += 2;
+        mealRemove += 1.75;
+        pointsAdd += 2;
         pointsRemove += 2;
     }
     checkPoints();
